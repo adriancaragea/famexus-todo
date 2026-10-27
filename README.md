@@ -24,6 +24,8 @@ curl http://localhost:8001/up
 curl http://localhost:8001/api/v1/ping
 ```
 
+`/api/v1/hello` only answers requests carrying a gateway-signed JWT, so try it through the gateway: `curl http://localhost:8000/api/v1/hello`.
+
 ## JWT keys
 
 Requests arrive from the gateway with a short-lived RS256 JWT. Put the gateway's public key at `storage/keys/jwt-public.pem` (see the gateway README for how to generate it). Keys are git-ignored.
